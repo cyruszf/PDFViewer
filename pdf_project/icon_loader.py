@@ -39,15 +39,6 @@ def load_icons(placeholder):
             except Exception:
                 pass
 
-        # 3) Fallback-ikon (enkel ruta)
-        if icon_img is None:
-            img = Image.new("RGBA", (18, 18), (200, 200, 200, 255))
-            draw = ImageDraw.Draw(img)
-            draw.rectangle((2, 2, 16, 16), outline=(100, 100, 100, 255))
-            icon_img = ImageTk.PhotoImage(img)
-
-        icons[name] = icon_img
-
     # säkerställ att alla nycklar finns
     for k in names:
         if k not in icons:
